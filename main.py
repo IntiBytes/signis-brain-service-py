@@ -14,8 +14,8 @@ app = FastAPI(title="Signis Brain Service", description="Signis Brain Service AP
 def read_root():
     return {"status": "OK"}
 
-@app.post("/analyze", response_model=BrainResponse)
-def analyze(request: BrainRequest):
+@app.post("/evaluate", response_model=BrainResponse)
+def evaluate(request: BrainRequest):
     score, verdict = score_robots(request)
     recommendations = generate_recommendations(request)
 
